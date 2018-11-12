@@ -1,8 +1,16 @@
-import { Map } from 'immutable';
+import { List, Map } from 'immutable';
 import { handleActions } from 'redux-actions';
+import { addUser} from 'actions';
 
-export const initialUserInfoState = Map({ userId: '111111111' });
+export const initialUserState = Map({});
 
-const userInfo = handleActions({}, initialUserInfoState);
+const user = handleActions(
+  {
+    [addUser]: (state, action) => {
+      return state.merge({ ...payload });
+    },
+  },
+  initialUserState,
+);
+export default user;
 
-export default userInfo;

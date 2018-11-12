@@ -3,7 +3,7 @@ import { combineReducers } from 'redux-immutable';
 import { Map } from 'immutable';
 import promiseMiddleware from 'redux-promise-middleware';
 import {
-  products, initialProductsState, userInfo, initialUserInfoState, filter, initialFilterState, cart, initialCartState, pricesList, initialPricesState
+  products, initialProductsState, filter, initialFilterState, cart, initialCartState, pricesList, initialPricesState, initialUserState, user, initialFetchUserInfoState , fetchUserInfo
 } from 'reducers';
 import thunkMiddleware from 'redux-thunk';
 import { createLogger } from "redux-logger";
@@ -18,20 +18,22 @@ const middleware = [logger, thunkMiddleware, promiseMiddleware()];
 const enhancer = composeEnhancers(applyMiddleware( ...middleware ));
 
 export const initialStoreState = Map({
-  userInfo: initialUserInfoState,
   filter: initialFilterState,
   products: initialProductsState,
   cart: initialCartState,
-  pricesList: initialPricesState
+  pricesList: initialPricesState,
+  user: initialUserState,
+  fetchUserInfo: initialFetchUserInfoState
 });
 
 const store = createStore(
   combineReducers({
-    userInfo,
+    user,
     filter,
     products,
     cart,
-    pricesList
+    pricesList,
+    fetchUserInfo
   }),
   initialStoreState,
   enhancer,

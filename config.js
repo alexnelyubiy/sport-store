@@ -1,10 +1,10 @@
 module.exports = {
-  title: 'Sport Store',
-  icon: 'data:image/x-icon;base64,==',
-  browserColor: '#3b3b3b',
+  title: "Sport Store",
+  icon: "data:image/x-icon;base64,==",
+  browserColor: "#3b3b3b",
   inject: true,
-  favicon: './src/media/favicon.png',
-  template: './src/index.ejs',
+  favicon: "./src/media/favicon.png",
+  template: "./src/index.ejs",
   minify: {
     removeComments: true,
     collapseWhitespace: true,
@@ -15,6 +15,6 @@ module.exports = {
     keepClosingSlash: true,
     minifyJS: true,
     minifyCSS: true,
-    minifyURLs: true,
-  },
+    minifyURLs: true
+  }
 };

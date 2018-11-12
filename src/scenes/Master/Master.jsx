@@ -1,31 +1,25 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Footer from 'components/widgets/Footer';
-import Header from 'components/widgets/Header';
-import { MasterContainer, Main } from './Master.styled'
+import React, { Fragment } from "react";
+import PropTypes from "prop-types";
+import Footer from "components/widgets/Footer";
+import Header from "components/widgets/Header";
+import { MasterContainer, Main } from "./Master.styled";
 
-const displayName = 'Master';
+const displayName = "Master";
 
 const propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.string
 };
 
 const defaultProps = {
-  title: 'Products'
+  title: "Products"
 };
 
-function Master({
-  title,
-  children,
-  hasCart,
-  itemsCount
-}) {
+function Master({ title, children, hasCart, itemsCount }) {
   return (
-    <Main>
+    <Fragment>
       <Header title={title} hasCart={hasCart} itemsCount={itemsCount} />
-        <MasterContainer>
-          {children}
-        </MasterContainer>
+      <Main>
+        <MasterContainer>{children}</MasterContainer>
         {/* <div>
           {myProducts.map(product => (
             <Product key={product.id} {...product} onRemove={handleRemoveProduct} />
@@ -35,8 +29,9 @@ function Master({
           <input type="text" value={name} onChange={changeName} />
           <Button onClick={handleAddProduct}>Add Product</Button>
         </div> */}
+      </Main>
       <Footer />
-    </Main>
+    </Fragment>
   );
 }
 

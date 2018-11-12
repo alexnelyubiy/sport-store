@@ -1,9 +1,9 @@
-import base from '../base';
+import base from "../base";
 
 const colored = {
   ...base,
-  colorAccent: '#ffaaaa',
-  colorDefault: '#aaffaa',
+  colorAccent: "#87CEFA",
+  colorDefault: "#87CEFA"
 };
 
 export default colored;

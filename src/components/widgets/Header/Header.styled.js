@@ -5,8 +5,10 @@ export const AppHeader = styled.header`
   flex-direction: row;
   justify-content: center;
   height: 100px;
-  background-color: #87CEFA;
+  flex: 0 0 auto;
+  background-color: #87cefa;
   position: relative;
+  align-items: center;
 `;
 
 export const LogoWrapper = styled.div`
