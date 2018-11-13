@@ -19,7 +19,7 @@ const defaultProps = {
 function ProductScene({
   myProducts, cartProducts
 }) {
-console.log("cart", cartProducts)
+
   return (
     <Master hasCart={true} itemsCount={cartProducts.length}>
       <ProductsWrapper>

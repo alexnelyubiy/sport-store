@@ -26,9 +26,10 @@ export const enhance = compose(
   ),
   withState('isAdded', 'handleAdding', false),
   withHandlers({
-    handleRemove: ({ id, onRemove }) => () => onRemove(id),
     handleAddProducts: ({ product, dispatchAddProduct, handleAdding, dispatchAddItemPrice }) => () => {
-      dispatchAddProduct(product);
+      const { id } = product;
+      dispatchAddProduct({id});
+      console.log(id)
       dispatchAddItemPrice({ id: product.id, price: product.price } )
       handleAdding(true);
     }

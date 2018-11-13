@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 // import {
 //   fetchProducts
 // } from 'actions';
-import { getCartProducts, getPrices, getProdSum, getPricesSum } from 'selectors';
+import { getCartProducts, getPrices, getPricesSum } from 'selectors';
 import CardScene from './CardScene';
 
 export const enhance = compose(
@@ -15,7 +15,7 @@ export const enhance = compose(
     state => ({
       cartProducts: getCartProducts(state),
       itemsPrices: getPrices(state),
-      getProdSum: getProdSum(state),
+      // getProdSum: getProdSum(state),
       pricesSum: getPricesSum(state)
     }), null
     // dispatch => bindActionCreators(
@@ -35,7 +35,6 @@ export const enhance = compose(
   // }),
   mapProps(props => ({
     ...props,
-    cartProducts: props.cartProducts.toJS(),
     itemsPrices: props.itemsPrices.toJS()
   })),
 );

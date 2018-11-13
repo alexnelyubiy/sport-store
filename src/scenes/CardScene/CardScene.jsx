@@ -8,7 +8,7 @@ import { TotalWrap } from "./CardScene.styled";
 const displayName = "CardScene";
 
 function CardScene({ itemsPrices, cartProducts, isCart, pricesSum, getProdSum }) {
-  console.log("PRICEs", itemsPrices, pricesSum);
+  console.log("cart", cartProducts)
   return (
     <Master title="Cart">
       <ProductsWrapper>

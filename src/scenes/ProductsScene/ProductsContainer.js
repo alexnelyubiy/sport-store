@@ -18,9 +18,6 @@ export const enhance = compose(
     }),
     dispatch => bindActionCreators(
       {
-        // dispatchChangeFilter: changeFilter,
-        // dispatchAddProduct: addProduct,
-        // dispatchRemoveProduct: removeProduct,
         dispatchFetchProducts: fetchProducts,
       },
       dispatch,
@@ -39,7 +36,6 @@ export const enhance = compose(
   mapProps(props => ({
     ...props,
     myProducts: props.myProducts.toJS(),
-    cartProducts: props.cartProducts.toJS(),
   })),
 );
 

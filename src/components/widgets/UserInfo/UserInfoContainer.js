@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import UserInfo from './UserInfo';
+import { getUser } from 'selectors';
 import {
   addUser
 } from 'actions';
@@ -14,7 +15,9 @@ export const enhance = compose(
   setPropTypes({
   }),
   connect(
-    null,
+    state => ({
+      userInfo: getUser(state)
+    }),
     dispatch => bindActionCreators(
       {
         dispatchAddUser: addUser
@@ -24,15 +27,18 @@ export const enhance = compose(
   ),
   withState('user', 'setUser', {firstName: "", lastName: "", city: "", postcode: "", phone: ""}),
   withHandlers({
-    handleAddProducts: (props) => () => {
-      dispatchAddUser({product});
+    handleAddProducts: ({user, dispatchAddUser}) => () => {
+      dispatchAddUser(user)
     },
     handleSetUser: ({ setUser, user }) => (e) => {
       const { name, value } = e.target;
       setUser({...user, [name]: value})
   },
   }),
-  mapProps(props => ({ ...props })),
+  mapProps(props => ({ 
+    ...props,
+    userInfo: props.userInfo.toJS(),
+   })),
 );
 
 export default enhance(UserInfo);
