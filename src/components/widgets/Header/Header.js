@@ -23,7 +23,9 @@ function Header({
   return (
     <AppHeader>
       <LogoWrapper>
+      <NavLink to='/'>
         <Logo src={logo} alt="" />
+      </NavLink>
       </LogoWrapper>
         <h1>Sport Store {title}</h1>
       { hasCart ? (

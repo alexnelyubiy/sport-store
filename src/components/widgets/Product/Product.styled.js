@@ -10,6 +10,15 @@ export const ProductItem = styled.div`
   border-radius: 7px;
   background-color: #F5F5F5;
   margin: 20px;
+  @media (max-width: 992px) {
+    width: 30%;
+  };
+  @media (max-width: 768px) {
+    width: 60%;
+  };
+  @media (max-width: 414px) {
+    width: 80%;
+  };
 `;
 
 export const ImageWrapper = styled.div`

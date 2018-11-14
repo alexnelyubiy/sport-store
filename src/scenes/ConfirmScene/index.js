@@ -1,3 +1,3 @@
-import ConfirmScene from './ConfirmScene';
+import ConfirmContainer from './ConfirmContainer';
 
-export default ConfirmScene;
+export default ConfirmContainer;

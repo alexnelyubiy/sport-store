@@ -1,10 +1,10 @@
 import addProduct from './addProduct';
 import removeProduct from './removeProduct';
 import fetchProducts from './fetchProducts';
-import changeFilter from './changeFilter';
 import addItemPrice from './addItemPrice';
 import addUser from './addUserInfo';
+import resetCart from './resetCart'
 
 export {
-  addProduct, removeProduct, fetchProducts, changeFilter, addItemPrice, addUser
+  addProduct, removeProduct, fetchProducts, addItemPrice, addUser, resetCart
 };

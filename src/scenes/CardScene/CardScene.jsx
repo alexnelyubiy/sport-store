@@ -7,7 +7,7 @@ import { TotalWrap } from "./CardScene.styled";
 
 const displayName = "CardScene";
 
-function CardScene({ itemsPrices, cartProducts, isCart, pricesSum, getProdSum }) {
+function CardScene({ cartProducts, isCart, pricesSum }) {
   console.log("cart", cartProducts)
   return (
     <Master title="Cart">
@@ -19,7 +19,10 @@ function CardScene({ itemsPrices, cartProducts, isCart, pricesSum, getProdSum })
       <TotalWrap>
         {cartProducts.length !== 0 ? <span>Total price: {pricesSum}$</span> : <span>Your cart is empty</span>}
       </TotalWrap>
-      <UserInfoContainer />
+      {
+        cartProducts.length > 0 ? <UserInfoContainer /> : null
+      }
+      
     </Master>
   );
 }

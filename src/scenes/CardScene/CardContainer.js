@@ -14,8 +14,6 @@ export const enhance = compose(
   connect(
     state => ({
       cartProducts: getCartProducts(state),
-      itemsPrices: getPrices(state),
-      // getProdSum: getProdSum(state),
       pricesSum: getPricesSum(state)
     }), null
     // dispatch => bindActionCreators(
@@ -34,8 +32,7 @@ export const enhance = compose(
   //   handleTotal: (setTotalprops) => () => setTotal(pricesSum)
   // }),
   mapProps(props => ({
-    ...props,
-    itemsPrices: props.itemsPrices.toJS()
+    ...props
   })),
 );
 

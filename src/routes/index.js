@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 import App from "App";
 import ProductsContainer from "scenes/ProductsScene";
 import CardContainer from "scenes/CardScene";
-import ConfirmScene from "scenes/ConfirmScene";
+import ConfirmContainer from "scenes/ConfirmScene";
 
 const Routes = ({ theme }) => (
     <App theme={theme} >
@@ -19,7 +19,7 @@ const Routes = ({ theme }) => (
         </Route>
         <Route 
           path="/confirmation" 
-          component={ConfirmScene} 
+          component={ConfirmContainer} 
           exact>
         </Route>
     </App>

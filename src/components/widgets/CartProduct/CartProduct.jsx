@@ -12,6 +12,7 @@ const propTypes = {
 };
 
 function CartProduct({ product, count, incrementCount, decrementCount }) {
+  console.log("PRICEs");
   return (
     <ProductItem>
       <ImageWrapper>

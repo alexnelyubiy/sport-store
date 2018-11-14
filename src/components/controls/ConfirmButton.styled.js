@@ -10,6 +10,9 @@ export const ConfirmButton = styled.button`
   font-size: 18px;
   transition: line-height 0.5s ease; 
   text-transform: uppercase;
+  @media (max-width: 414px) {
+    width: 310px;
+  };
   :focus::-webkit-input-placeholder {
     color: transparent;
     outline: none;
