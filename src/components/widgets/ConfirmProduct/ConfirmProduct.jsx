@@ -9,7 +9,7 @@ const propTypes = {
   handleAddProducts: PropTypes.func.isRequired
 };
 
-function ConfirmProduct({ product }) {
+function ConfirmProduct({ product, totalPrice }) {
   console.log("PRICEs");
   return (
     <ProductItem>
@@ -17,8 +17,8 @@ function ConfirmProduct({ product }) {
         <ImageProduct src={product.url} alt="" />
       </ImageWrapper>
       <span>{product.name}</span>
-      <span>Quantity: {product.totalPrice / product.price}</span>
-      <span>Price: {product.totalPrice}$</span>
+      <span>Quantity: {totalPrice / product.price}</span>
+      <span>Price: {totalPrice}$</span>
     </ProductItem>
   );
 }

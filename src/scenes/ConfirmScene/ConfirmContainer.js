@@ -4,7 +4,7 @@ import {
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { resetCart } from 'actions';
-import { getCartProducts, getUser, getPricesSum } from 'selectors';
+import { getCartProducts, getUser, getPricesSum, getPrices } from 'selectors';
 import ConfirmScene from './ConfirmScene';
 
 export const enhance = compose(
@@ -13,7 +13,8 @@ export const enhance = compose(
     state => ({
       user: getUser(state),
       cartProducts: getCartProducts(state),
-      pricesSum: getPricesSum(state)
+      pricesSum: getPricesSum(state),
+      prices: getPrices(state)
     }), dispatch => bindActionCreators(
       {
         dispatchResetCart: resetCart,
@@ -32,7 +33,9 @@ export const enhance = compose(
   }),
   mapProps(props => ({
     ...props,
-    user: props.user.toJS()
+    user: props.user.toJS(),
+    cartProducts: props.cartProducts.toJS(),
+    prices: props.prices.toJS()
   })),
 );
 

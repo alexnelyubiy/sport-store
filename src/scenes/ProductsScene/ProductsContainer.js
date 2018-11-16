@@ -36,6 +36,7 @@ export const enhance = compose(
   mapProps(props => ({
     ...props,
     myProducts: props.myProducts.toJS(),
+    cartProducts: props.cartProducts.toJS()
   })),
 );
 

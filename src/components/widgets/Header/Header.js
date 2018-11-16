@@ -30,7 +30,7 @@ function Header({
         <h1>Sport Store {title}</h1>
       { hasCart ? (
         <BasketWrapper>
-          <NavLink style={{"text-decoration": "none", "text-align":"right", "color": "grey"}} to='/cart'>
+          <NavLink style={{"textDecoration": "none", "textAlign":"right", "color": "grey"}} to='/cart'>
             <ItemsCount>{itemsCount}</ItemsCount>
             <Basket src={basket} alt="" />
           </NavLink>

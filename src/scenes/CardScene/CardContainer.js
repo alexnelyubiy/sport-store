@@ -32,7 +32,8 @@ export const enhance = compose(
   //   handleTotal: (setTotalprops) => () => setTotal(pricesSum)
   // }),
   mapProps(props => ({
-    ...props
+    ...props,
+    cartProducts: props.cartProducts.toJS()
   })),
 );
 

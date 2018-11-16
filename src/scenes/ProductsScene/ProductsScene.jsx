@@ -9,7 +9,6 @@ const displayName = 'Master';
 const propTypes = {
   title: PropTypes.string,
   myProducts: PropTypes.array.isRequired,
-  handleAddProducts: PropTypes.func.isRequired,
 };
 
 const defaultProps = {

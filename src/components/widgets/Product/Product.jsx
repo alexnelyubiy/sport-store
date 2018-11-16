@@ -19,7 +19,7 @@ function Product({ product, handleAddProducts, isAdded }) {
       <span>{product.name}</span>
       <span>{product.price}$</span>
       {!isAdded ? (
-        <Button style={{ width: 50, borderRadius: 5 }} onClick={handleAddProducts} value="addProduct">
+        <Button style={{ width: "50px", borderRadius: "5px" }} onClick={handleAddProducts} value="addProduct">
           Add
         </Button>
       ) : (
