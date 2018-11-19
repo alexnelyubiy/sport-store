@@ -11,6 +11,7 @@ const cart = handleActions(
       return state.push(payload.id);
     },
     [resetCart]: (state, action) => {
+     
       return initialCartState;
     }
   },

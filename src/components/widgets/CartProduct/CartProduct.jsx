@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Button } from "components/controls";
 import { ProductItem, ImageWrapper, ImageProduct } from "components/widgets/Product/Product.styled";
-import { Counter, Increment, Decrement, ItemCount } from "./CartProduct.style";
+import { Counter, Increment, Decrement, ItemCount } from "./CartProduct.styled";
 
 const displayName = "CartProduct";
 
