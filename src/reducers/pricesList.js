@@ -11,7 +11,6 @@ export const pricesList = handleActions(
       return state.merge({ [id]: price });
     },
     [resetCart]: (state, action) => {
-      console.log("resetPrice111111111111111111111111111")
       return initialPricesState;
     }
   },

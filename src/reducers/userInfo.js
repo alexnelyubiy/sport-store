@@ -8,7 +8,6 @@ const user = handleActions(
   {
     [addUser]: (state, action) => {
       const { payload } = action;
-      console.log("user payload", {payload})
       return state.merge({ ...payload });
     },
   },
