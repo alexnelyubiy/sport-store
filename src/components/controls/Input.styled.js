@@ -1,9 +1,6 @@
 import styled from "styled-components";
 
-export const Input = styled.input.attrs({
-  // Every <PasswordInput /> should be type="password"
-  required: "true"
-})`
+export const Input = styled.input`
   margin-top: 25px;
   height: 30px;
   width: 360px;
@@ -15,12 +12,7 @@ export const Input = styled.input.attrs({
   @media (max-width: 414px) {
     width: 310px;
   }; 
-  :focus::-webkit-input-placeholder {
-    color: transparent;
-    outline: none;
-  }
-  
-  :focus:-ms-input-placeholder {
+  :focus::placeholder {
     color: transparent;
     outline: none;
   }

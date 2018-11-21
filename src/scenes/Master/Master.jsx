@@ -19,16 +19,9 @@ function Master({ title, children, hasCart, itemsCount }) {
     <Fragment>
       <Header title={title} hasCart={hasCart} itemsCount={itemsCount} />
       <Main>
-        <MasterContainer>{children}</MasterContainer>
-        {/* <div>
-          {myProducts.map(product => (
-            <Product key={product.id} {...product} onRemove={handleRemoveProduct} />
-          ))}
-        </div>
-        <div>
-          <input type="text" value={name} onChange={changeName} />
-          <Button onClick={handleAddProduct}>Add Product</Button>
-        </div> */}
+        <MasterContainer>
+          {children}
+        </MasterContainer>
       </Main>
       <Footer />
     </Fragment>

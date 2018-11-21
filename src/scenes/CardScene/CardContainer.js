@@ -16,21 +16,8 @@ export const enhance = compose(
       cartProducts: getCartProducts(state),
       pricesSum: getPricesSum(state)
     }), null
-    // dispatch => bindActionCreators(
-    //   {
-    //     // dispatchChangeFilter: changeFilter,
-    //     // dispatchAddProduct: addProduct,
-    //     // dispatchRemoveProduct: removeProduct,
-    //     dispatchFetchProducts: fetchProducts,
-    //   },
-    //   dispatch,
-    // ),
   ),
- 
-  // withState('totalPrice', 'setTotal', props => props.getProdSum),
-  // withHandlers({
-  //   handleTotal: (setTotalprops) => () => setTotal(pricesSum)
-  // }),
+
   mapProps(props => ({
     ...props,
     cartProducts: props.cartProducts.toJS()

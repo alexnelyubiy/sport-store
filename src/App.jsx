@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import ThemeContext, * as themes from 'themes';
 
 const displayName = 'App';
 
@@ -12,11 +11,11 @@ const defaultProps = {
   theme: 'base'
 };
 
-export default function App({ children, theme }) {
+export default function App({ children }) {
   return (
-    <ThemeContext.Provider value={themes[theme]}>
+    <Fragment>
       {children}
-    </ThemeContext.Provider>
+    </Fragment>
   );
 }
 

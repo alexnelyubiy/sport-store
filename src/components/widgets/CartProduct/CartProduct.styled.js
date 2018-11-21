@@ -13,12 +13,18 @@ export const Decrement = styled.span`
   width: 40%;
   border-right: 1px solid black;
   text-align: center;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const Increment = styled.span`
   width: 40%;
   border-left: 1px solid black;
   text-align: center;
+  :hover {
+    cursor: pointer;
+  }
 `;
 export const ItemCount = styled.span`
   width: 20%;

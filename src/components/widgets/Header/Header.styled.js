@@ -13,6 +13,9 @@ export const AppHeader = styled.header`
 
 export const LogoWrapper = styled.div`
   width: 90px;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const BasketWrapper = styled.div`

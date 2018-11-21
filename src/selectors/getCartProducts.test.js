@@ -16,7 +16,6 @@ describe('Given the getProducts selector', () => {
 
     describe('and the filter is specified in the store', () => {
       
-
       it('should return products from the store by the cart index', () => {
         expect(result.equals(fromJS([{ id: 1, name: '111' }]))).toBe(true);
       });

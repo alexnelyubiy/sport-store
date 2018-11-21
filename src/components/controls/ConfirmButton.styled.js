@@ -28,4 +28,7 @@ export const ConfirmButton = styled.button`
     outline: none;
     transition: line-height 0.5s ease; 
   }
+  :hover {
+    cursor: pointer;
+  }
 `;
