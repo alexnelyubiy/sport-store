@@ -17,7 +17,7 @@ function Product({ product, handleAddProducts, isAdded }) {
         <ImageProduct src={product.url} alt="" />
       </ImageWrapper>
       <span>{product.name}</span>
-      <span>{product.price}$</span>
+      <span>{product.price}$</span> 
       {!isAdded ? (
         <Button style={{ width: "50px", borderRadius: "5px" }} onClick={handleAddProducts} value="addProduct">
           Add

@@ -3,7 +3,6 @@ import { createSelector } from 'reselect';
 const getCartProducts = createSelector(
   state => state.get('cart'),
   state => state.get('products'),
-  state => state.get('pricesList'),
   (cart, products) => {
     const cartItems = products.filter(product => cart.indexOf(product.get('id')) !== -1);
     return cartItems;

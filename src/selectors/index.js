@@ -3,7 +3,7 @@ import getUserInfo from './getUserInfo';
 import getCartProducts from './getCartProducts';
 import getPrices from './getPrices'
 import { getProdSum } from './getCartProducts';
-import { getPricesSum } from './getPrices';
+import getPricesSum from './getPricesSum';
 import getUser from './getUser';
 
 export { getProducts, getUserInfo, getCartProducts, getPrices, getProdSum, getPricesSum, getUser };
