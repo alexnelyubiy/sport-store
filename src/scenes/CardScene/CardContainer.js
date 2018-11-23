@@ -1,12 +1,9 @@
 import {
-  compose, withState, withHandlers, setDisplayName, mapProps, withProps
+  compose, setDisplayName, mapProps
 } from 'recompose';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-// import {
-//   fetchProducts
-// } from 'actions';
-import { getCartProducts, getPrices, getPricesSum } from 'selectors';
+import { getCartProducts, getPricesSum } from 'selectors';
 import CardScene from './CardScene';
 
 export const enhance = compose(

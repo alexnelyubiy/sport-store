@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given the CardScene component when the component is rendered and cartProducts is empty should match the snapshot with emty cart 1`] = `
+<Master
+  title="Cart"
+>
+  <ProductsScenestyled__ProductsWrapper />
+  <CardScenestyled__TotalWrap>
+    <span>
+      Your cart is empty
+    </span>
+  </CardScenestyled__TotalWrap>
+</Master>
+`;
+
+exports[`Given the CardScene component when the component is rendered should render the component with provided props 1`] = `
+<Master
+  title="Cart"
+>
+  <ProductsScenestyled__ProductsWrapper>
+    <CartProductContainer
+      isCart={true}
+      product={
+        Object {
+          "name": "Item 1",
+          "price": 290,
+        }
+      }
+    />
+    <CartProductContainer
+      isCart={true}
+      product={
+        Object {
+          "name": "Item 2",
+          "price": 20,
+        }
+      }
+    />
+  </ProductsScenestyled__ProductsWrapper>
+  <CardScenestyled__TotalWrap>
+    <span>
+      Total price: 
+      310
+      $
+    </span>
+  </CardScenestyled__TotalWrap>
+  <ProductContainer />
+</Master>
+`;

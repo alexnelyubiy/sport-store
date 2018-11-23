@@ -1,5 +1,5 @@
 import {
-  compose, withState, withHandlers, setDisplayName, mapProps, lifecycle
+  compose, withHandlers, setDisplayName, mapProps, lifecycle
 } from 'recompose';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
