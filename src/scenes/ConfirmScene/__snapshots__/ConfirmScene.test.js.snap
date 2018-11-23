@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given the ConfirmScene component when the component is rendered and ConfirmScene is confirm should match the snapshot with emty cart 1`] = `
+<Master
+  title="Confirmation"
+>
+  <ProductsScenestyled__ProductsWrapper>
+    <ConfirmScenestyled__ThanksWrapper>
+      <ConfirmScenestyled__ThanksSpan>
+        Thanks for your choice!
+      </ConfirmScenestyled__ThanksSpan>
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        to="/"
+      >
+        <ConfirmButtonstyled__ConfirmButton
+          onClick={[MockFunction]}
+        >
+          Back to Store
+        </ConfirmButtonstyled__ConfirmButton>
+      </NavLink>
+    </ConfirmScenestyled__ThanksWrapper>
+  </ProductsScenestyled__ProductsWrapper>
+</Master>
+`;
+
+exports[`Given the ConfirmScene component when the component is rendered should render the component with provided props 1`] = `
+<Master
+  title="Confirmation"
+>
+  <ConfirmScenestyled__ConfirmWrapper>
+    <ProductsScenestyled__ProductsWrapper>
+      <ConfirmProduct
+        key="1"
+        product={
+          Object {
+            "id": 1,
+            "name": "Item 1",
+            "price": 290,
+          }
+        }
+        totalPrice={290}
+      />
+      <ConfirmProduct
+        key="2"
+        product={
+          Object {
+            "id": 2,
+            "name": "Item 2",
+            "price": 20,
+          }
+        }
+        totalPrice={20}
+      />
+    </ProductsScenestyled__ProductsWrapper>
+    <CardScenestyled__TotalWrap>
+      <span>
+        Total price: 
+        310
+        $
+      </span>
+    </CardScenestyled__TotalWrap>
+    <UserConfirm
+      user={
+        Object {
+          "firstName": "",
+          "lastName": "",
+        }
+      }
+    />
+    <ConfirmButtonstyled__ConfirmButton
+      onClick={[MockFunction]}
+    >
+      Confirm
+    </ConfirmButtonstyled__ConfirmButton>
+  </ConfirmScenestyled__ConfirmWrapper>
+</Master>
+`;

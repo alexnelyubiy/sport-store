@@ -13,7 +13,7 @@ const testStore = configureStore([ thunkMiddleware ])(
   Map({
     products: List([Map({name: "Item1", price: 120, id: 1}), Map({name: "Item2", price: 20, id: 2})]),
     cart: List([1]),
-    pricesList: Map({1: 120, 2: 20})
+    pricesList: Map({1: 120})
   })
 );
 

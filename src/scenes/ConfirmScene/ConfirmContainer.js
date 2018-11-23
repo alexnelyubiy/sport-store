@@ -7,6 +7,15 @@ import { resetCart } from 'actions';
 import { getCartProducts, getUser, getPricesSum, getPrices } from 'selectors';
 import ConfirmScene from './ConfirmScene';
 
+export const handlers = {
+  handleConfirm: props => {
+    props.setConfirm(true);
+  },
+  handleResetCart: props => {
+    props.dispatchResetCart();
+  }
+}
+
 export const enhance = compose(
   setDisplayName('ProductsContainer'),
   connect(
@@ -22,15 +31,8 @@ export const enhance = compose(
       dispatch,
     ),
   ),
-  withState("isConfirm", "handleConfirm", false),
-  withHandlers({
-    handleConfirm: ({ handleConfirm }) => () => {
-      handleConfirm(true);
-    },
-    handleResetCart: ({ dispatchResetCart }) => {
-      dispatchResetCart();
-    }
-  }),
+  withState("isConfirm", "setConfirm", false),
+  withHandlers(handlers),
   mapProps(props => ({
     ...props,
     user: props.user.toJS(),
