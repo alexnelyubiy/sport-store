@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import configureStore from 'redux-mock-store';
+import { initialStoreState } from 'store';
 import { Provider } from 'react-redux';
 import { createSink } from 'recompose';
 import thunkMiddleware from 'redux-thunk';
@@ -8,13 +9,7 @@ import { Map, List } from 'immutable';
 import { getProducts, getCartProducts, getUserInfo } from 'selectors';
 import { handlers, enhance } from './ProductsContainer';
 
-const testStore = configureStore([thunkMiddleware])(
-  Map({
-    products: List([Map({ name: 'Item1', price: 120, id: 1 }), Map({ name: 'Item2', price: 20, id: 2 })]),
-    cart: List([1]),
-    userId: '111111111',
-  }),
-);
+const testStore = configureStore([thunkMiddleware])(initialStoreState);
 
 const testProps = {
   dispatchFetchProducts: jest.fn(),
