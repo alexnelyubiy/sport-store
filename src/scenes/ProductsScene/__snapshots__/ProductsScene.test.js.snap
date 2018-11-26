@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given the ProductScene component when the component is rendered should render the component with provided props 1`] = `
+<Master
+  hasCart={true}
+  itemsCount={2}
+  title="Products"
+>
+  <ProductsScenestyled__ProductsWrapper>
+    <ProductContainer
+      key="1"
+      product={
+        Object {
+          "id": 1,
+          "name": "Item 1",
+          "price": 290,
+        }
+      }
+    />
+    <ProductContainer
+      key="2"
+      product={
+        Object {
+          "id": 2,
+          "name": "Item 2",
+          "price": 20,
+        }
+      }
+    />
+  </ProductsScenestyled__ProductsWrapper>
+</Master>
+`;

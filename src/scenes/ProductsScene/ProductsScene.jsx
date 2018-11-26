@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Master from 'scenes/Master';
 import Product from 'components/widgets/Product';
-import { ProductsWrapper } from './ProductsScene.styled'
+import { ProductsWrapper } from './ProductsScene.styled';
 
 const displayName = 'Master';
 
@@ -12,17 +12,15 @@ const propTypes = {
 };
 
 const defaultProps = {
-  title: 'Products'
+  title: 'Products',
 };
 
-function ProductScene({
-  myProducts, cartProducts
-}) {
+function ProductScene({ products, cartProducts }) {
   return (
-    <Master hasCart={true} itemsCount={cartProducts.length}>
+    <Master hasCart itemsCount={cartProducts.length}>
       <ProductsWrapper>
-        {myProducts.map(product => (
-          <Product key={product.id} product={ product } />
+        {products.map(product => (
+          <Product key={product.id} product={product} />
         ))}
       </ProductsWrapper>
     </Master>

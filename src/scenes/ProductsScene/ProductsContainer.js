@@ -1,20 +1,24 @@
 import {
-  compose, withHandlers, setDisplayName, mapProps, lifecycle
+  compose, withHandlers, setDisplayName, mapProps, lifecycle,
 } from 'recompose';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import {
-  fetchProducts
-} from 'actions';
+import { fetchProducts } from 'actions';
 import { getProducts, getCartProducts } from 'selectors';
 import ProductsScene from './ProductsScene';
+
+export const handlers = {
+  handleFetchProducts: ({ dispatchFetchProducts }) => () => {
+    dispatchFetchProducts();
+  },
+};
 
 export const enhance = compose(
   setDisplayName('ProductsContainer'),
   connect(
     state => ({
-      myProducts: getProducts(state),
-      cartProducts: getCartProducts(state)
+      products: getProducts(state),
+      cartProducts: getCartProducts(state),
     }),
     dispatch => bindActionCreators(
       {
@@ -23,20 +27,16 @@ export const enhance = compose(
       dispatch,
     ),
   ),
-  withHandlers({
-    handleFetchProducts: ({ dispatchFetchProducts }) => () => {
-      dispatchFetchProducts();
-    }
-  }),
+  withHandlers(handlers),
   lifecycle({
     componentDidMount() {
       this.props.handleFetchProducts();
-    }
+    },
   }),
   mapProps(props => ({
     ...props,
-    myProducts: props.myProducts.toJS(),
-    cartProducts: props.cartProducts.toJS()
+    products: props.products.toJS(),
+    cartProducts: props.cartProducts.toJS(),
   })),
 );
 
