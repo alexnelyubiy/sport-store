@@ -8,10 +8,10 @@ import { getCartProducts, getUser, getPricesSum, getPrices } from 'selectors';
 import ConfirmScene from './ConfirmScene';
 
 export const handlers = {
-  handleConfirm: props => {
+  handleConfirm: props => () => {
     props.setConfirm(true);
   },
-  handleResetCart: props => {
+  handleResetCart: props => () => {
     props.dispatchResetCart();
   }
 }

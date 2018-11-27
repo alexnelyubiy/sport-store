@@ -1,5 +1,6 @@
 {
   "extends": ["airbnb"],
+  "plugins": ["webdriverio"],
   "settings": {
     "import/resolver": "webpack"
   },
@@ -14,6 +15,7 @@
   },
   "env": {
     "browser": true,
-    "jest": true
+    "jest": true,
+    "webdriverio/wdio": true
   }
 }

@@ -26,7 +26,7 @@ describe('Given a handleConfirm handlers', () => {
 	describe('when the handleConfirm is called', () => {
 
 		beforeEach(() => {
-			handlers.handleConfirm(testProps);
+			handlers.handleConfirm(testProps)();
 		});
 
 		it('should call the handleConfirm function', () => {
@@ -36,7 +36,7 @@ describe('Given a handleConfirm handlers', () => {
 
 	describe('when the handleResetCart is called', () => {
 		beforeEach(() => {
-			handlers.handleResetCart(testProps);
+			handlers.handleResetCart(testProps)();
 		});
 
 		it('should call the dispatchResetCart function', () => {
