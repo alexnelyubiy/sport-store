@@ -21,9 +21,9 @@ function CartProduct({ product, count, incrementCount, decrementCount }) {
       <span>{product.name}</span>
       <span>{product.price * count}$</span>
       <Counter>
-        <Decrement onClick={decrementCount}>-</Decrement>
-        <ItemCount>{count}</ItemCount>
-        <Increment onClick={incrementCount}>+</Increment>
+        <Decrement data-name="minus" onClick={decrementCount}>-</Decrement>
+        <ItemCount data-name={`${product.name}`}>{count}</ItemCount>
+        <Increment data-name="plus" onClick={incrementCount}>+</Increment>
       </Counter>
       {/* <Button  value="addProduct">
           Remove 
