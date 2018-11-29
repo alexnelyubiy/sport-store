@@ -14,8 +14,6 @@
     "react/jsx-filename-extension": ["error", { "extensions": [".test.js", ".jsx"] }]
   },
   "env": {
-    "browser": true,
-    "jest": true,
-    "webdriverio/wdio": true
+    "browser": true
   }
 }

@@ -38,7 +38,7 @@ describe('Given the fetchProducts action', () => {
         expect(action).toEqual({
           type: 'FETCH_PRODUCTS',
           payload: {
-            url: 'http://localhost:2001/v1/products',
+            url: 'http://localhost:8080/v1/products',
             config: {
               headers: { 'X-User-Id': 111 },
             },

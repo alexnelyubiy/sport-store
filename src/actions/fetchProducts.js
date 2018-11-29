@@ -2,7 +2,7 @@ import axios from 'axios';
 import { createAction } from 'redux-actions';
 import { getUserInfo } from 'selectors';
 
-const payloadCreator = userId => axios.get('http://localhost:2001/v1/products', { headers: { 'X-User-Id': userId } });
+const payloadCreator = userId => axios.get('http://localhost:8080/v1/products', { headers: { 'X-User-Id': userId } });
 
 const fetchProductsAsync = createAction('FETCH_PRODUCTS', payloadCreator);
 

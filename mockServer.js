@@ -18,7 +18,7 @@ server.get("/v1/products", (req, res) => {
 
 server.use(router);
 
-server.listen(2001, () => {
+server.listen(8080, () => {
   /* eslint-disable no-console */
   console.log("JSON Server is running");
 });

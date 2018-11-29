@@ -5,7 +5,6 @@ class Products {
 
   static get findbuttonsAddtoCart() {
     const links = $$('button');
-
     return links;
   }
 
@@ -13,14 +12,8 @@ class Products {
     return browser.element(`[data-name="${name}"]`);
   }
 
-  static findHeader() {
+  static findPCart() {
     return browser.element('[data-name="header-cart"]');
-  }
-
-  static findCartUrl() {
-    const links = $$('header a');
-
-    return links;
   }
 }
 

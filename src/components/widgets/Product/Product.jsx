@@ -12,11 +12,11 @@ const propTypes = {
 
 function Product({ product, handleAddProducts, isAdded }) {
   return (
-    <ProductItem>
+    <ProductItem >
       <ImageWrapper>
         <ImageProduct src={product.url} alt="" />
       </ImageWrapper>
-      <span>{product.name}</span>
+      <span data-name={product.name} >{product.name}</span>
       <span>{product.price}$</span> 
       {!isAdded ? (
         <Button onClick={handleAddProducts} value="addProduct">
