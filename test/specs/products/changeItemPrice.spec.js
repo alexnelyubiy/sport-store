@@ -19,7 +19,6 @@ describe('Given the Products page is opened', () => {
         beforeEach(() => {
           Cart.findbuttonsPlus.forEach((link) => {
             link.click();
-            console.log("PLUS", link.value)
           });
         });
         it('should add quantity 2 to product in cart', () => {
