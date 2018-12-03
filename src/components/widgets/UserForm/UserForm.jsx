@@ -1,5 +1,5 @@
 import React from 'react'
-import { Field, reduxForm } from 'redux-form'
+import { Field, reduxForm } from 'redux-form/immutable'
 import { Input, ConfirmButton } from "components/controls";
 
 const validate = values => {
@@ -41,6 +41,7 @@ const renderField = ({
   <div>
     <label>{label}</label>
     <div>
+      {console.log(input)}
       <Input {...input} placeholder={label} type={type} />
       {touched &&
         ((error && <span>{error}</span>) ||

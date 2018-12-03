@@ -7,7 +7,8 @@ export const Input = styled.input.attrs({
   onBlur: props => props.onBlur,
   placeholder: props => props.placeholder,
   type: props => props.type,
-  value: props => props.value
+  value: props => props.value,
+  onFocus: props => props.onFocus
 })`
   margin-top: 25px;
   height: 30px;
