@@ -35,6 +35,5 @@ describe('Given the CardContainer enhancer', () => {
       expect(providedProps.cartProducts).toMatchObject(getCartProducts(testStore.getState()).toJS());
       expect(providedProps.pricesSum).toBe(getPricesSum(testStore.getState()));
     });
-
   });
 });

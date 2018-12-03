@@ -2,12 +2,13 @@ import React from "react";
 import Master from "scenes/Master";
 import CartProductContainer from "components/widgets/CartProduct";
 import UserInfoContainer from "components/widgets/UserInfo";
+import UserForm from "components/widgets/UserForm";
 import { ProductsWrapper } from "../ProductsScene/ProductsScene.styled";
 import { TotalWrap } from "./CardScene.styled";
 
 const displayName = "CardScene";
 
-function CardScene({ cartProducts, isCart, pricesSum }) {
+function CardScene({ handleSubmit, cartProducts, isCart, pricesSum }) {
   return (
     <Master title="Cart">
       <ProductsWrapper>
@@ -20,6 +21,9 @@ function CardScene({ cartProducts, isCart, pricesSum }) {
       </TotalWrap>
       {
         cartProducts.length > 0 ? <UserInfoContainer /> : null
+      }
+      {
+        cartProducts.length > 0 ? <UserForm onSubmit={handleSubmit}/> : null
       }
     </Master>
   );

@@ -1,6 +1,14 @@
 import styled from "styled-components";
 
-export const Input = styled.input`
+export const Input = styled.input.attrs({
+  // we can define static props
+  name: props => props.name,
+  onChange: props => props.onChange,
+  onBlur: props => props.onBlur,
+  placeholder: props => props.placeholder,
+  type: props => props.type,
+  value: props => props.value
+})`
   margin-top: 25px;
   height: 30px;
   width: 360px;
