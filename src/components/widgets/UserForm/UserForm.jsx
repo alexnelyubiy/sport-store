@@ -41,7 +41,7 @@ const renderField = ({
   <div>
     <label>{label}</label>
     <div>
-      {console.log(input)}
+    {console.log("IMMUTABLE INPUT", input)}
       <Input {...input} placeholder={label} type={type} />
       {touched &&
         ((error && <span>{error}</span>) ||
@@ -54,7 +54,6 @@ const SyncValidationForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props
   return (
     <form onSubmit={handleSubmit}>
-
       <Field
         name="username"
         type="text"
@@ -78,5 +77,7 @@ const SyncValidationForm = props => {
 export default reduxForm({
   form: 'syncValidation', // a unique identifier for this form
   validate, // <--- validation function given to redux-form
+  destroyOnUnmount: false,
+  
   warn // <--- warning function given to redux-form
 })(SyncValidationForm)

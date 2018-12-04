@@ -2,7 +2,7 @@ import { createStore, compose, applyMiddleware } from 'redux';
 import { combineReducers } from 'redux-immutable';
 import { Map } from 'immutable';
 import promiseMiddleware from 'redux-promise-middleware';
-import {reducer as formReduxReducer} from 'redux-form';
+import {reducer as formReduxReducer} from 'redux-form/immutable';
 import {
   products, initialProductsState, cart, initialCartState, pricesList, initialPricesState, initialUserState, user, initialFetchUserInfoState , fetchUserInfo
 } from 'reducers';

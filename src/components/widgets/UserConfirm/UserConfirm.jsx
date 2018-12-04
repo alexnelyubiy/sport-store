@@ -6,15 +6,13 @@ const displayName = "UserConfirm";
 
 const propTypes = {};
 
-function UserConfirm({user}) {
+function UserConfirm({values}) {
  
   return (
     <UserInfoWrap>
-        <span>First name: {user.firstName}</span>
-        <span>Last name: {user.lastName}</span>
-        <span>City: {user.city}</span>
-        <span>Postcode: {user.postcode}</span>
-        <span>Phone: {user.phone}</span>
+        <span>First name: {values.username}</span>
+        <span>Last name: {values.email}</span>
+        <span>City: {values.age}</span>
     </UserInfoWrap>
   );
 }

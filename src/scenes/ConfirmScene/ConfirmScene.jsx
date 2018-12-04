@@ -10,8 +10,8 @@ import { NavLink } from 'react-router-dom'
 
 const displayName = 'ConfirmScene';
 
-function ConfirmScene({cartProducts, pricesSum, user, handleConfirm, isConfirm, handleResetCart, prices}) {
-  console.log("prices", prices)
+function ConfirmScene({values, cartProducts, pricesSum, user, handleConfirm, isConfirm, handleResetCart, prices}) {
+  console.log("values", values)
   return (
     <Master title="Confirmation">
       {!isConfirm ? (
@@ -24,7 +24,7 @@ function ConfirmScene({cartProducts, pricesSum, user, handleConfirm, isConfirm, 
           <TotalWrap>
             <span>Total price: {pricesSum}$</span>
           </TotalWrap>
-          <UserConfirm user={user} />
+          <UserConfirm values={values} />
           <ConfirmButton onClick={handleConfirm}>Confirm</ConfirmButton>
         </ConfirmWrapper>
         ) : (

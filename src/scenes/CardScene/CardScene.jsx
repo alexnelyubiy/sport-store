@@ -23,7 +23,7 @@ function CardScene({ handleSubmit, cartProducts, isCart, pricesSum }) {
         cartProducts.length > 0 ? <UserInfoContainer /> : null
       }
       {
-        cartProducts.length > 0 ? <UserForm onSubmit={handleSubmit}/> : null
+        cartProducts.length > 0 ? <UserForm handleSubmit={handleSubmit}/> : null
       }
     </Master>
   );
