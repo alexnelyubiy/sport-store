@@ -10,7 +10,7 @@ import CardScene from './CardScene';
 export const handlers = {
   handleSubmit: props => () => {
     // props.history.push('/confirmation');
-    console.log("FUCK")
+    console.log("Hi")
   }
 }
 

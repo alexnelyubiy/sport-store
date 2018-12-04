@@ -54,7 +54,7 @@ const SyncValidationForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props
   return (
     <form onSubmit={handleSubmit}>
-    {console.log("FUCKING input props", props)}
+
       <Field
         name="username"
         type="text"
