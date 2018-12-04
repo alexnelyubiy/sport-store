@@ -19,9 +19,9 @@ function CardScene({ handleSubmit, cartProducts, isCart, pricesSum }) {
       <TotalWrap>
         {cartProducts.length !== 0 ? <span>Total price: {pricesSum}$</span> : <span>Your cart is empty</span>}
       </TotalWrap>
-      {
+      {/* {
         cartProducts.length > 0 ? <UserInfoContainer /> : null
-      }
+      } */}
       {
         cartProducts.length > 0 ? <UserForm handleSubmit={handleSubmit}/> : null
       }

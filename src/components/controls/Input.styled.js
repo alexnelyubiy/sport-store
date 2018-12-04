@@ -8,7 +8,8 @@ export const Input = styled.input.attrs({
   placeholder: props => props.placeholder,
   type: props => props.type,
   value: props => props.value,
-  onFocus: props => props.onFocus
+  onFocus: props => props.onFocus,
+  required: props => props.required
 })`
   margin-top: 25px;
   height: 30px;

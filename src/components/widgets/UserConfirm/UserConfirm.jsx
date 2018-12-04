@@ -10,7 +10,7 @@ function UserConfirm({values}) {
  
   return (
     <UserInfoWrap>
-        <span>First name: {values.username}</span>
+        <span>First name: {values.Username}</span>
         <span>Last name: {values.email}</span>
         <span>City: {values.age}</span>
     </UserInfoWrap>

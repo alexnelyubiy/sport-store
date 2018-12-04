@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const ConfirmButton = styled.button`
+export const ConfirmButton = styled.button.attrs({
+  // we can define static props
+  type: props => props.type,
+  disabled: props => props.type
+})`
   margin-top: 25px;
   height: 40px;
   width: 360px;

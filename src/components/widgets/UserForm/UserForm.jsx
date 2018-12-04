@@ -1,6 +1,7 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form/immutable'
 import { Input, ConfirmButton } from "components/controls";
+import { UserInfoWrap, UserInfoForm } from "../UserInfo/UserInfo.styled";
 
 const validate = values => {
   const errors = {}
@@ -34,15 +35,14 @@ const warn = values => {
 
 const renderField = ({
   input,
-  label,
+  placeholder,
   type,
   meta: { touched, error, warning }
 }) => (
   <div>
-    <label>{label}</label>
     <div>
     {console.log("IMMUTABLE INPUT", input)}
-      <Input {...input} placeholder={label} type={type} />
+      <Input {...input} required placeholder={placeholder} type={type} />
       {touched &&
         ((error && <span>{error}</span>) ||
           (warning && <span>{warning}</span>))}
@@ -53,24 +53,27 @@ const renderField = ({
 const SyncValidationForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props
   return (
-    <form onSubmit={handleSubmit}>
-      <Field
-        name="username"
-        type="text"
-        component={renderField}
-        label="Username"
-      />
-      <Field name="email" type="email" component={renderField} label="Email" />
-      <Field name="age" type="number" component={renderField} label="Age" />
-      <div>
-        <button type="submit" disabled={submitting}>
-          Submit
-        </button>
-        <button type="button" disabled={pristine || submitting} onClick={reset}>
-          Clear Values
-        </button>
-      </div>
-    </form>
+    <UserInfoWrap>
+      <h2>Your info</h2>
+      <UserInfoForm onSubmit={handleSubmit}>
+        <Field
+          name="Username"
+          type="text"
+          component={renderField}
+          placeholder="Username"
+        />
+        <Field name="email" type="email" component={renderField} placeholder="Username" />
+        <Field name="age" type="number" component={renderField}  placeholder="Username" />
+        <div>
+          <ConfirmButton type="submit" disabled={submitting}>
+            Submit
+          </ConfirmButton>
+          {/* <button type="button" disabled={pristine || submitting} onClick={reset}>
+            Clear Values
+          </button> */}
+        </div>
+      </UserInfoForm>
+    </UserInfoWrap>
   )
 }
 
