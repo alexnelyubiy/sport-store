@@ -10,9 +10,10 @@ function UserConfirm({values}) {
  
   return (
     <UserInfoWrap>
-        <span>First name: {values.Username}</span>
-        <span>Last name: {values.email}</span>
-        <span>City: {values.age}</span>
+        <span>Full name: {values.fullName}</span>
+        <span>City: {values.city}</span>
+        <span>Email: {values.email}</span>
+        <span>Phone: {values.phone}</span>
     </UserInfoWrap>
   );
 }
