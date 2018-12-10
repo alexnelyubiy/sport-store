@@ -8,7 +8,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <Routes theme="colored" />
+      <Routes />
     </Router>
   </Provider>, 
   document.getElementById('root')

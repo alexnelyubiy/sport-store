@@ -6,8 +6,8 @@ import { UserInfoWrap, UserInfoForm } from "../UserInfo/UserInfo.styled";
 const validate = values => {
   const errors = {}
   if (values.get("fullName") ) {
-    if (values.get("fullName").length > 15) {
-      errors.fullName = 'Must be 15 characters or less'
+    if (values.get("fullName").length > 25) {
+      errors.fullName = 'Must be 25 characters or less'
     }
   } 
   
@@ -24,10 +24,10 @@ const validate = values => {
   return errors
 }
 
-export const phoneNumber = value =>
-  value && !/^(0|[1-9][0-9]{9})$/i.test(value)
-    ? 'Invalid phone number, must be 10 digits'
-    : undefined
+// export const phoneNumber = value =>
+//   value && !/^(0|[1-9][0-9]{9})$/i.test(value)
+//     ? 'Invalid phone number, must be 10 digits'
+//     : undefined
     
 const warn = values => {
   const warnings = {}
@@ -81,7 +81,7 @@ const SyncValidationForm = props => {
         <Field 
           name="phone" 
           type="number" 
-          validate={[phoneNumber]}
+          // validate={[phoneNumber]}
           component={renderField}  
           placeholder="+38(068)0000000" 
         />

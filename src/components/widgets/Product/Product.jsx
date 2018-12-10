@@ -20,7 +20,7 @@ function Product({ product, handleAddProducts, isAdded }) {
       <span>{product.price}$</span> 
       {!isAdded ? (
         <Button onClick={handleAddProducts} value="addProduct">
-          Add
+          ADD
         </Button>
       ) : (
         <span>Item is added!</span>

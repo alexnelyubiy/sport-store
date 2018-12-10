@@ -10,7 +10,7 @@ const cart = handleActions(
       const { payload } = action;
       return state.push(payload.id);
     },
-    [resetCart]: (state, action) => {
+    [resetCart]: () => {
       return initialCartState;
     }
   },

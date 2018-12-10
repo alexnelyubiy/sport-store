@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { ThemeProvider } from 'styled-components';
+import { base } from 'themes';
 
 const displayName = 'App';
 
@@ -11,10 +13,12 @@ const defaultProps = {
   theme: 'base'
 };
 
-export default function App({ children }) {
+export default function App({ children, theme }) {
   return (
     <Fragment>
-      {children}
+      <ThemeProvider theme={base}>
+        {children}
+      </ThemeProvider>
     </Fragment>
   );
 }
