@@ -6,7 +6,7 @@ export const Button = styled.button`
   height: 20px;
   font-weight: 500;
   border: none;
-  border-radius: 5px;
+  border-radius: ${({ theme: { borderRadius } }) => borderRadius};
   background: ${({ theme: { colorBase } }) => colorBase};
   :hover {
     cursor: pointer;

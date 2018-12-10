@@ -4,7 +4,7 @@ export const Counter = styled.div`
   height: 20px;
   width: 60px;
   background-color: #87CEFA;
-  border-radius: 5px;
+  border-radius: ${({ theme: { borderRadius } }) => borderRadius};
   display: flex;
 `;
 

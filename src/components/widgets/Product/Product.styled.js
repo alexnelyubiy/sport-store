@@ -7,7 +7,7 @@ export const ProductItem = styled.div`
   justify-content: center;
   width: 27%;
   height: 270px;
-  border-radius: 7px;
+  border-radius: ${({ theme: { borderRadius } }) => borderRadius};
   background-color: #F5F5F5;
   margin: 20px;
   @media (max-width: 992px) {
