@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import CardScene from './CardScene';
 
 const testProps = {
+  handleSubmit: jest.fn(),
   cartProducts: [{name: "Item 1", price: 290}, {name: "Item 2", price: 20}],
   isCart: true,
   pricesSum: 310

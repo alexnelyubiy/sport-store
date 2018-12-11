@@ -5,17 +5,31 @@ import { createSink } from 'recompose';
 import thunkMiddleware from 'redux-thunk';
 import configureStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
-import { enhance } from './CardContainer';
+import { enhance, handlers } from './CardContainer';
+import { initialStoreState } from 'store';
 import { getCartProducts, getPricesSum } from 'selectors';
 import { List, Map } from 'immutable';
+import { MemoryRouter } from 'react-router-dom';
 
-const testStore = configureStore([ thunkMiddleware ])(
-  Map({
-    products: List([Map({name: "Item1", price: 120, id: 1}), Map({name: "Item2", price: 20, id: 2})]),
-    cart: List([1]),
-    pricesList: Map({1: 120})
-  })
-);
+const testStore = configureStore([thunkMiddleware])(initialStoreState);
+
+const testProps = {
+	history: { push: jest.fn() }
+};
+
+describe('Given a CardContainer handlers', () => {
+	describe('when the handleConfirm is called', () => {
+
+		beforeEach(() => {
+      handlers.handleSubmit(testProps)();
+      console.log("TESTPROPS.history", testProps.history)
+		});
+
+		it('should call the handleConfirm function', () => {
+      expect(testProps.history.push.mock.calls[0]).toEqual(['/confirmation']);
+		});
+	});
+});
 
 describe('Given the CardContainer enhancer', () => {
   describe('when the enhancer is applied', () => {
@@ -25,9 +39,12 @@ describe('Given the CardContainer enhancer', () => {
       const DummyContainer = enhance(createSink(props => providedProps = props));
 
       mount(
-        <Provider store={ testStore }>
-          <DummyContainer />
-        </Provider>
+        <MemoryRouter>
+          <Provider store={ testStore }>
+            <DummyContainer />
+          </Provider>
+        </MemoryRouter>
+        
       );
     });
 

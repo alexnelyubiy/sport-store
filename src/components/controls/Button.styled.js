@@ -8,6 +8,7 @@ export const Button = styled.button`
   border: none;
   border-radius: ${({ theme: { borderRadius } }) => borderRadius};
   background: ${({ theme: { colorBase } }) => colorBase};
+  transition: 0.3s ease;
   :hover {
     cursor: pointer;
     background: ${({ theme: { colorHover } }) => colorHover};
