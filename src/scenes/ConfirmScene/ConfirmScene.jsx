@@ -10,7 +10,7 @@ import { NavLink } from 'react-router-dom'
 
 const displayName = 'ConfirmScene';
 
-function ConfirmScene({values, cartProducts, pricesSum, user, handleConfirm, isConfirm, handleResetCart, prices}) {
+function ConfirmScene({values, cartProducts, pricesSum, handleConfirm, isConfirm, handleResetCart, prices}) {
   console.log("values", values)
   return (
     <Master title="Confirmation">

@@ -8,7 +8,6 @@ const testProps = {
   isCart: true,
   handleResetCart: jest.fn(),
   handleConfirm: jest.fn(),
-  user: {firstName: "", lastName: ""},
   isConfirm: false,
   prices: {1: 290, 2: 20}
 }
