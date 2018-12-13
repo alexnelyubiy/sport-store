@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { resetCart } from 'actions';
 import { getFormValues } from 'redux-form/immutable';
-import { getCartProducts, getUser, getPricesSum, getPrices } from 'selectors';
+import { getCartProducts, getPricesSum, getPrices } from 'selectors';
 import ConfirmScene from './ConfirmScene';
 
 export const handlers = {
@@ -22,7 +22,6 @@ export const enhance = compose(
   connect(
     state => ({
       values: getFormValues('syncValidation')(state),
-      user: getUser(state),
       cartProducts: getCartProducts(state),
       pricesSum: getPricesSum(state),
       prices: getPrices(state)
@@ -38,7 +37,6 @@ export const enhance = compose(
   mapProps(props => ({
     ...props,
     values: props.values.toJS(),
-    user: props.user.toJS(),
     cartProducts: props.cartProducts.toJS(),
     prices: props.prices.toJS()
   })),

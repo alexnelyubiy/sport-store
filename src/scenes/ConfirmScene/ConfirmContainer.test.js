@@ -5,12 +5,28 @@ import { Provider } from 'react-redux';
 import { createSink } from 'recompose';
 import thunkMiddleware from 'redux-thunk';
 import { Map, List } from 'immutable';
-import { getCartProducts, getUser, getPricesSum, getPrices } from 'selectors';
+import { getCartProducts, getPricesSum, getPrices } from 'selectors';
 import { getFormValues } from 'redux-form/immutable';
 import { handlers, enhance } from './ConfirmContainer';
 import { initialStoreState } from 'store';
 
-const testStore = configureStore([thunkMiddleware])(initialStoreState);
+const testStore = configureStore([thunkMiddleware])(
+		Map({
+			products: List([Map({name: "Item1", price: 120, id: 1}), Map({name: "Item2", price: 20, id: 2})]),
+			cart: List([1]),
+			pricesList: Map({1: 120}),
+			form: Map({
+				syncValidation: Map({
+					values: Map({
+						fullName: "Alex",
+						city: "Desna",
+						email: "qwaqwa@mail.com",
+						phone: "1234567890"
+					}) 
+				})
+			})
+		})
+);
 
 const testProps = {
 	dispatchResetCart: jest.fn(),
@@ -56,10 +72,9 @@ describe('Given a ConfirmContainer enhancer', () => {
 
 		it('should pass provided properties', () => {
       expect(providedProps.cartProducts).toMatchObject(getCartProducts(testStore.getState()).toJS());
-      expect(providedProps.user).toMatchObject(getUser(testStore.getState()).toJS());
       expect(providedProps.prices).toMatchObject(getPrices(testStore.getState()).toJS());
 			expect(providedProps.pricesSum).toBe(getPricesSum(testStore.getState()));
-			expect(providedProps.values).toMatchObject(getFormValues(testStore.getState()));
+			expect(providedProps.values).toEqual(getFormValues('syncValidation')(testStore.getState()).toJS());
       expect(providedProps.dispatchResetCart).toBeInstanceOf(Function);
       expect(providedProps.handleConfirm).toBeInstanceOf(Function);
     });

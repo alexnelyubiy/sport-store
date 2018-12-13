@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import Master from "scenes/Master";
 import CartProductContainer from "components/widgets/CartProduct";
 import UserInfoContainer from "components/widgets/UserInfo";
@@ -7,6 +8,13 @@ import { ProductsWrapper } from "../ProductsScene/ProductsScene.styled";
 import { TotalWrap } from "./CardScene.styled";
 
 const displayName = "CardScene";
+
+const propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+  cartProducts: PropTypes.array.isRequired,
+  isCart: PropTypes.bool.isRequired,
+  pricesSum: PropTypes.number.isRequired
+};
 
 function CardScene({ handleSubmit, cartProducts, isCart, pricesSum }) {
   return (
@@ -29,6 +37,7 @@ function CardScene({ handleSubmit, cartProducts, isCart, pricesSum }) {
   );
 }
 
+CardScene.PropTypes = propTypes;
 CardScene.displayName = displayName;
 
 export default CardScene;

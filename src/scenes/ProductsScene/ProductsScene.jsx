@@ -8,7 +8,8 @@ const displayName = 'Master';
 
 const propTypes = {
   title: PropTypes.string,
-  myProducts: PropTypes.array.isRequired,
+  products: PropTypes.array.isRequired,
+  cartProducts: PropTypes.array.isRequired
 };
 
 const defaultProps = {
